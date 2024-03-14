@@ -22,3 +22,7 @@ body {
 .mistyped {
   background-color: red;
 }
+.typecount {
+  margin: 0;
+  color: #888;
+}

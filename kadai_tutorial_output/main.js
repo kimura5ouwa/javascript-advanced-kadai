@@ -9,6 +9,7 @@ const typedfield = document.getElementById('typed');
 const wrap = document.getElementById('wrap');
 const start = document.getElementById('start');
 const count = document.getElementById('count');
+const typecount = document.getElementById('typecount');
 
 
 // 複数のテキストを格納する配列
@@ -59,11 +60,13 @@ const keyPress = e => {
   untyped = untyped.substring(1);
   typedfield.textContent = typed;
   untypedfield.textContent = untyped;
+  //タイプ数カウント
+  typecount.textContent = score;
 
   //テキストがなくなったら新しいテキストを表示
-if(untyped === '') {
+ if(untyped === '') {
   createText();
-}
+ }
 
 };
 
@@ -118,10 +121,8 @@ start.addEventListener('click', () =>{
   timer();
   //ランダムなテキストを表示
   createText();
-
   //スタートボタンを非表示にする
   start.style.display = 'none';
-
 //キーボードのイベント処理
   document.addEventListener('keypress',keyPress);
 });
